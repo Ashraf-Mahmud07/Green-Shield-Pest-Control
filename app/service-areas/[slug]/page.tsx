@@ -15,7 +15,8 @@ import { RatingStars } from "@/components/shared/rating-stars";
 import { FaqSection } from "@/components/shared/faq-section";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { Button } from "@/components/ui/button";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { cityImages, images } from "@/data/images";
 
 export function generateStaticParams() {
   return serviceAreas.map((a) => ({ slug: a.slug }));
@@ -63,10 +64,20 @@ export default async function ServiceAreaPage({
         ]}
       >
         <FadeIn delay={0.15} className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button href="/request-inspection" variant="secondary" size="lg">
+          <Button
+            href="/request-inspection"
+            variant="secondary"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
             Free {area.city} Inspection
           </Button>
-          <Button href={site.phoneHref} variant="outline-light" size="lg">
+          <Button
+            href={site.phoneHref}
+            variant="outline-light"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
             <Phone aria-hidden />
             {site.phone}
           </Button>
@@ -161,10 +172,10 @@ export default async function ServiceAreaPage({
           {/* Map + coverage */}
           <FadeIn direction="left">
             <div className="lg:sticky lg:top-28">
-              <ImagePlaceholder
-                alt={`Service coverage map of ${area.city}, ${area.state} showing GreenShield's daily route area`}
-                label={`${area.city} coverage map`}
-                className="aspect-square w-full"
+              <SiteImage
+                image={cityImages[area.slug] ?? images.hero}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="aspect-square w-full shadow-soft"
               />
               <div className="mt-6 rounded-3xl border border-gray-100 bg-white p-6 shadow-soft">
                 <h3 className="flex items-center gap-2 font-heading text-base font-bold text-charcoal">

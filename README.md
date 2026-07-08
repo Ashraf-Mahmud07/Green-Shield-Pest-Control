@@ -45,7 +45,7 @@ types/index.ts          # Shared TypeScript interfaces
 - **Data-driven pages** — adding a service, city, or article means adding one object to a data file; the template, sitemap, nav, and schema markup update automatically.
 - **SEO** — per-page metadata + canonical URLs, Open Graph/Twitter cards, and JSON-LD (Organization, LocalBusiness/PestControlService, Service, FAQPage, BreadcrumbList, BlogPosting). `app/sitemap.ts` and `app/robots.ts` generate automatically.
 - **Forms** — React Hook Form + Zod validation. Submissions are currently simulated client-side (`console.info` + success state); wire the `onSubmit` handlers in `components/forms/*` to your CRM or an API route.
-- **Images** — `ImagePlaceholder` renders styled gradient placeholders carrying the final alt text. Swap for `next/image` with real photography by replacing the component usage; alt text is already written.
+- **Images** — all photography is defined once in `data/images.ts` (visually verified Unsplash imagery with descriptive alt text) and rendered through `components/shared/site-image.tsx` (`next/image` with fill, responsive `sizes`, lazy loading). Swap any registry entry for brand photography without touching page code. `next.config.ts` whitelists `images.unsplash.com`.
 - **Accessibility** — skip link, ARIA labels/expanded states, keyboard-operable accordions and menus, focus styles, `prefers-reduced-motion` support.
 - **Brand tokens** — colors, fonts, shadows, and utilities (`container-site`, `glass`, `bg-dot-grid`) are defined in `app/globals.css` via Tailwind v4 `@theme`.
 
@@ -53,6 +53,6 @@ types/index.ts          # Shared TypeScript interfaces
 
 - Company name/phone/address/social URLs in `data/site.ts`
 - `public/og-image.jpg` and `public/logo.png` (referenced by SEO metadata)
-- Real photography for `ImagePlaceholder` slots
-- Google Maps embed on the contact page
+- Stock imagery in `data/images.ts` → replace with brand photography before launch
+- Google Maps embed on the contact page (currently a static map image)
 - Form submission endpoints

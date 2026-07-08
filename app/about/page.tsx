@@ -17,7 +17,8 @@ import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
 import { StatsCounter } from "@/components/shared/stats-counter";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { images } from "@/data/images";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { Badge } from "@/components/ui/badge";
 
@@ -166,10 +167,10 @@ export default function AboutPage() {
             </FadeIn>
           </div>
           <FadeIn direction="left">
-            <ImagePlaceholder
-              alt="The GreenShield team gathered in front of the Austin office with their service fleet"
-              label="The GreenShield team, Austin HQ"
-              className="aspect-[4/3] w-full"
+            <SiteImage
+              image={images.team}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="aspect-[4/3] w-full shadow-soft"
             />
           </FadeIn>
         </div>

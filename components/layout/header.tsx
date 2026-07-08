@@ -117,11 +117,11 @@ export function Header() {
             })}
           </ul>
 
-          {/* Desktop CTAs */}
+          {/* Desktop CTAs — phone number needs xl width to fit beside the nav */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href={site.phoneHref}
-              className="flex items-center gap-2 font-heading text-sm font-semibold text-primary-800 transition-colors hover:text-primary-600"
+              className="hidden items-center gap-2 font-heading text-sm font-semibold text-primary-800 transition-colors hover:text-primary-600 xl:flex"
             >
               <span className="flex size-9 items-center justify-center rounded-full bg-secondary-100">
                 <Phone className="size-4 text-secondary-700" aria-hidden />
@@ -209,7 +209,7 @@ function MegaMenu() {
   return (
     <motion.div
       {...panelMotion}
-      className="absolute left-1/2 top-full w-[720px] -translate-x-1/2 pt-3"
+      className="absolute left-1/2 top-full w-[720px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-3"
     >
       <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lift">
         <div className="grid grid-cols-4 gap-8">

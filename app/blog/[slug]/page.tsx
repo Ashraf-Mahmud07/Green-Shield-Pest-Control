@@ -8,7 +8,8 @@ import { formatDate } from "@/lib/utils";
 import { PageHero } from "@/components/shared/page-hero";
 import { FadeIn } from "@/components/shared/motion";
 import { JsonLd } from "@/components/shared/json-ld";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { blogImages } from "@/data/images";
 import { BlogCard } from "@/components/cards/blog-card";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
@@ -84,11 +85,14 @@ export default async function BlogPostPage({
           {/* Article body */}
           <article className="min-w-0 max-w-3xl">
             <FadeIn>
-              <ImagePlaceholder
-                alt={post.imageAlt}
-                label={post.category}
-                className="mb-10 aspect-[16/9] w-full"
-              />
+              {blogImages[post.slug] && (
+                <SiteImage
+                  image={blogImages[post.slug]}
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  priority
+                  className="mb-10 aspect-[16/9] w-full"
+                />
+              )}
             </FadeIn>
 
             {post.content.map((block, i) => (

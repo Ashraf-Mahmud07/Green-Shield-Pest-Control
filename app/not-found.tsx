@@ -21,16 +21,16 @@ export default function NotFound() {
           The page you&apos;re looking for scurried off or never existed. Unlike pests, we
           can&apos;t bring it back — but here&apos;s the fastest way forward.
         </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <Button href="/" variant="secondary" size="lg">
+        <div className="mt-10 flex w-full max-w-xs flex-col gap-4 sm:w-auto sm:max-w-none sm:flex-row">
+          <Button href="/" variant="secondary" size="lg" className="w-full sm:w-auto">
             <Home aria-hidden />
             Back to Home
           </Button>
-          <Button href="/services" variant="outline-light" size="lg">
+          <Button href="/services" variant="outline-light" size="lg" className="w-full sm:w-auto">
             <Search aria-hidden />
             Browse Services
           </Button>
-          <Button href={site.phoneHref} variant="outline-light" size="lg">
+          <Button href={site.phoneHref} variant="outline-light" size="lg" className="w-full sm:w-auto">
             <Phone aria-hidden />
             {site.phone}
           </Button>

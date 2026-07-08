@@ -16,7 +16,8 @@ import { buildMetadata, serviceSchema, faqSchema } from "@/lib/seo";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { images, serviceImages } from "@/data/images";
 import { JsonLd } from "@/components/shared/json-ld";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -71,10 +72,20 @@ export default async function ServicePage({
         ]}
       >
         <FadeIn delay={0.15} className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button href="/request-inspection" variant="secondary" size="lg">
-            Get a Free Inspection
+          <Button
+            href="/request-inspection"
+            variant="secondary"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
+            Schedule an Inspection
           </Button>
-          <Button href={site.phoneHref} variant="outline-light" size="lg">
+          <Button
+            href={site.phoneHref}
+            variant="outline-light"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
             <Phone aria-hidden />
             {site.phone}
           </Button>
@@ -85,10 +96,11 @@ export default async function ServicePage({
       <section aria-label="Service overview" className="container-site py-16 lg:py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <FadeIn direction="right">
-            <ImagePlaceholder
-              alt={service.imageAlt}
-              label={service.shortName}
-              className="aspect-[4/3] w-full lg:sticky lg:top-28"
+            <SiteImage
+              image={serviceImages[service.slug] ?? images.technicianSpraying}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+              className="aspect-[4/3] w-full shadow-soft lg:sticky lg:top-28"
             />
           </FadeIn>
           <div>

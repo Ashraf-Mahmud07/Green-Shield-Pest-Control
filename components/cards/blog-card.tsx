@@ -2,7 +2,8 @@ import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/types";
 import { Badge } from "@/components/ui/badge";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { blogImages } from "@/data/images";
 import { formatDate } from "@/lib/utils";
 
 /** Article preview card for blog listings and homepage. */
@@ -12,13 +13,14 @@ export function BlogCard({ post }: { post: BlogPost }) {
       href={`/blog/${post.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
     >
-      <div className="relative overflow-hidden">
-        <ImagePlaceholder
-          alt={post.imageAlt}
-          label={post.category}
-          className="aspect-[16/10] w-full rounded-none transition-transform duration-500 group-hover:scale-105"
+      {blogImages[post.slug] && (
+        <SiteImage
+          image={blogImages[post.slug]}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="aspect-[16/10] w-full rounded-none"
+          imgClassName="transition-transform duration-500 group-hover:scale-105"
         />
-      </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-3 text-xs text-gray-500">
           <Badge variant="secondary">{post.category}</Badge>

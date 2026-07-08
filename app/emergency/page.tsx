@@ -109,8 +109,13 @@ export default function EmergencyPage() {
         crumbs={[{ name: "Emergency Service", path: "/emergency" }]}
       >
         <FadeIn delay={0.15} className="mt-8">
-          <div className="inline-flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href={site.emergencyPhoneHref} variant="accent" size="xl">
+          <div className="flex flex-col gap-4 sm:inline-flex sm:flex-row sm:items-center">
+            <Button
+              href={site.emergencyPhoneHref}
+              variant="accent"
+              size="xl"
+              className="w-full sm:w-auto"
+            >
               <Siren aria-hidden />
               Call {site.emergencyPhone} Now
             </Button>

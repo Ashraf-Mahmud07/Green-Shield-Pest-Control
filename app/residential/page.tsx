@@ -20,7 +20,8 @@ import { testimonials } from "@/data/testimonials";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { images } from "@/data/images";
 import { PricingCard } from "@/components/cards/pricing-card";
 import { ReviewCard } from "@/components/cards/review-card";
 import { CtaBanner } from "@/components/shared/cta-banner";
@@ -107,10 +108,15 @@ export default function ResidentialPage() {
         crumbs={[{ name: "Residential", path: "/residential" }]}
       >
         <FadeIn delay={0.15} className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button href="/request-inspection" variant="secondary" size="lg">
-            Schedule a Free Home Inspection
+          <Button
+            href="/request-inspection"
+            variant="secondary"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
+            Schedule a Home Inspection
           </Button>
-          <Button href="/plans" variant="outline-light" size="lg">
+          <Button href="/plans" variant="outline-light" size="lg" className="w-full sm:w-auto">
             Compare Protection Plans
           </Button>
         </FadeIn>
@@ -148,11 +154,10 @@ export default function ResidentialPage() {
             </Stagger>
           </div>
           <FadeIn direction="left">
-            <ImagePlaceholder
-              alt="Family relaxing in a pest-free living room with a dog while a technician treats the home exterior"
-              label="Family-safe home protection"
-              tone="lime"
-              className="aspect-[4/3] w-full"
+            <SiteImage
+              image={images.family}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="aspect-[4/3] w-full shadow-soft"
             />
           </FadeIn>
         </div>
@@ -186,10 +191,10 @@ export default function ResidentialPage() {
       <section aria-label="Home inspection process" className="container-site py-16 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <FadeIn direction="right">
-            <ImagePlaceholder
-              alt="Licensed inspector examining a home's foundation and weep holes during a free inspection"
-              label="The free 40-minute inspection"
-              className="aspect-[4/5] w-full"
+            <SiteImage
+              image={images.homeInspection}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="aspect-[4/5] w-full shadow-soft"
             />
           </FadeIn>
           <div>

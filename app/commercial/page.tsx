@@ -84,10 +84,10 @@ export default function CommercialPage() {
         crumbs={[{ name: "Commercial", path: "/commercial" }]}
       >
         <FadeIn delay={0.15} className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button href="/get-quote" variant="secondary" size="lg">
+          <Button href="/get-quote" variant="secondary" size="lg" className="w-full sm:w-auto">
             Request a Facility Assessment
           </Button>
-          <Button href="/contact" variant="outline-light" size="lg">
+          <Button href="/contact" variant="outline-light" size="lg" className="w-full sm:w-auto">
             Talk to a Commercial Specialist
           </Button>
         </FadeIn>

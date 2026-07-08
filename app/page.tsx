@@ -33,7 +33,8 @@ import { StatsCounter } from "@/components/shared/stats-counter";
 import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
 import { CtaBanner } from "@/components/shared/cta-banner";
 import { FaqSection } from "@/components/shared/faq-section";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { images } from "@/data/images";
 import { RatingStars } from "@/components/shared/rating-stars";
 import { ServiceCard } from "@/components/cards/service-card";
 import { PricingCard } from "@/components/cards/pricing-card";
@@ -297,10 +298,10 @@ export default function HomePage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <FadeIn direction="right">
             <div className="relative">
-              <ImagePlaceholder
-                alt="GreenShield technician greeting a homeowner at their front door with a tablet service report"
-                label="Your local GreenShield technician"
-                className="aspect-[4/5] w-full"
+              <SiteImage
+                image={images.handshake}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="aspect-[4/5] w-full shadow-soft"
               />
               <div className="glass absolute -bottom-6 right-4 max-w-56 rounded-2xl p-5 shadow-lift">
                 <Award className="size-8 text-accent-500" aria-hidden />

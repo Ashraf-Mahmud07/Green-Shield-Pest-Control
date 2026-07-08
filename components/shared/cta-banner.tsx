@@ -35,12 +35,22 @@ export function CtaBanner({
               {title}
             </h2>
             <p className="mt-4 text-base text-primary-100 sm:text-lg">{subtitle}</p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/request-inspection" variant="secondary" size="lg">
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
+              <Button
+                href="/request-inspection"
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 <ClipboardCheck aria-hidden />
-                Get a Free Inspection
+                Schedule an Inspection
               </Button>
-              <Button href={site.phoneHref} variant="outline-light" size="lg">
+              <Button
+                href={site.phoneHref}
+                variant="outline-light"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 <Phone aria-hidden />
                 Call {site.phone}
               </Button>

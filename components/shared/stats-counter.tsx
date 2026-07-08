@@ -22,7 +22,7 @@ export function StatsCounter({ dark = true }: { dark?: boolean }) {
         <div key={stat.label} className="text-center">
           <div
             className={cn(
-              "font-heading text-4xl font-bold tracking-tight sm:text-5xl",
+              "font-heading text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",
               dark ? "text-white" : "text-primary-800"
             )}
           >

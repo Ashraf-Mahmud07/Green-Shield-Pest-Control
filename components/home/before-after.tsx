@@ -1,37 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { MoveHorizontal } from "lucide-react";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
-
-const projects = [
-  {
-    title: "Wasp Nest Colony — Eave Removal",
-    location: "Barton Hills, Austin",
-    beforeAlt: "Large paper wasp nest colony under a home's eave before removal",
-    afterAlt: "Clean, treated eave after professional wasp nest removal",
-  },
-  {
-    title: "Rodent-Damaged Attic — Full Restoration",
-    location: "Round Rock",
-    beforeAlt: "Attic insulation contaminated and compressed by a rodent infestation",
-    afterAlt: "Restored attic with fresh insulation after rodent exclusion and sanitation",
-  },
-  {
-    title: "Fire Ant Yard — Mound Elimination",
-    location: "Georgetown",
-    beforeAlt: "Backyard lawn dotted with active fire ant mounds before treatment",
-    afterAlt: "Healthy, mound-free lawn after professional fire ant treatment",
-  },
-];
+import { beforeAfterProjects } from "@/data/images";
+import type { ImageAsset } from "@/data/images";
 
 /**
  * Interactive before/after comparison with a draggable divider.
  */
 export function BeforeAfter() {
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
-      {projects.map((project) => (
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {beforeAfterProjects.map((project) => (
         <CompareCard key={project.title} {...project} />
       ))}
     </div>
@@ -41,31 +22,38 @@ export function BeforeAfter() {
 function CompareCard({
   title,
   location,
-  beforeAlt,
-  afterAlt,
-}: (typeof projects)[number]) {
+  before,
+  after,
+}: {
+  title: string;
+  location: string;
+  before: ImageAsset;
+  after: ImageAsset;
+}) {
   const [pos, setPos] = useState(50);
 
   return (
     <figure className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-soft transition-shadow hover:shadow-lift">
       <div className="relative aspect-[4/3] select-none">
         {/* After layer (base) */}
-        <ImagePlaceholder
-          alt={afterAlt}
-          label="After"
-          tone="lime"
-          className="absolute inset-0 rounded-none"
+        <Image
+          src={after.src}
+          alt={after.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
         />
         {/* Before layer (clipped) */}
         <div
           className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         >
-          <ImagePlaceholder
-            alt={beforeAlt}
-            label="Before"
-            tone="warm"
-            className="absolute inset-0 rounded-none"
+          <Image
+            src={before.src}
+            alt={before.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
           />
         </div>
         {/* Divider handle */}

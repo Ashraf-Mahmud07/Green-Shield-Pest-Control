@@ -1,12 +1,14 @@
 "use client";
 
 import { useCallback } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import type { Testimonial } from "@/types";
 import { RatingStars } from "@/components/shared/rating-stars";
 import { Card, CardContent } from "@/components/ui/card";
+import { avatarImages } from "@/data/images";
 
 /**
  * Auto-playing, swipeable testimonial carousel (Embla).
@@ -35,14 +37,25 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-600">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="mt-6 border-t border-gray-100 pt-5">
-                    <RatingStars rating={t.rating} />
-                    <p className="mt-2 font-heading text-sm font-semibold text-charcoal">
-                      {t.name}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      {t.service} · {t.location}
-                    </p>
+                  <div className="mt-6 flex items-center gap-4 border-t border-gray-100 pt-5">
+                    {avatarImages[t.name] && (
+                      <Image
+                        src={avatarImages[t.name].src}
+                        alt={avatarImages[t.name].alt}
+                        width={48}
+                        height={48}
+                        className="size-12 shrink-0 rounded-full object-cover ring-2 ring-secondary-200"
+                      />
+                    )}
+                    <div>
+                      <RatingStars rating={t.rating} />
+                      <p className="mt-1 font-heading text-sm font-semibold text-charcoal">
+                        {t.name}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {t.service} · {t.location}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

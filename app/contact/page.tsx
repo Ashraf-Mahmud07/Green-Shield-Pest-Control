@@ -12,7 +12,8 @@ import { site } from "@/data/site";
 import { PageHero } from "@/components/shared/page-hero";
 import { FadeIn } from "@/components/shared/motion";
 import { ContactForm } from "@/components/forms/contact-form";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { SiteImage } from "@/components/shared/site-image";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us — Talk to a Real Human",
@@ -52,7 +53,7 @@ export default function ContactPage() {
                       <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700 transition-colors group-hover:bg-primary-700 group-hover:text-white">
                         <Phone className="size-5" aria-hidden />
                       </span>
-                      <span>
+                      <span className="min-w-0 break-words">
                         <span className="block font-heading font-semibold text-charcoal">
                           {site.phone}
                         </span>
@@ -65,7 +66,7 @@ export default function ContactPage() {
                       <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-accent-50 text-accent-600 transition-colors group-hover:bg-accent-500 group-hover:text-white">
                         <Siren className="size-5" aria-hidden />
                       </span>
-                      <span>
+                      <span className="min-w-0 break-words">
                         <span className="block font-heading font-semibold text-charcoal">
                           {site.emergencyPhone}
                         </span>
@@ -78,7 +79,7 @@ export default function ContactPage() {
                       <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700 transition-colors group-hover:bg-primary-700 group-hover:text-white">
                         <Mail className="size-5" aria-hidden />
                       </span>
-                      <span>
+                      <span className="min-w-0 break-words">
                         <span className="block font-heading font-semibold text-charcoal">
                           {site.email}
                         </span>
@@ -90,7 +91,7 @@ export default function ContactPage() {
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
                       <MapPin className="size-5" aria-hidden />
                     </span>
-                    <address className="not-italic">
+                    <address className="min-w-0 break-words not-italic">
                       <span className="block font-heading font-semibold text-charcoal">
                         Headquarters
                       </span>
@@ -105,7 +106,7 @@ export default function ContactPage() {
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
                       <Clock className="size-5" aria-hidden />
                     </span>
-                    <div>
+                    <div className="min-w-0 break-words">
                       <span className="block font-heading font-semibold text-charcoal">
                         Business Hours
                       </span>
@@ -143,11 +144,14 @@ export default function ContactPage() {
 
             {/* Map placeholder */}
             <FadeIn delay={0.1}>
-              <ImagePlaceholder
-                alt={`Map showing the GreenShield Pest Control office at ${site.address.street}, ${site.address.city}, ${site.address.state}`}
-                label="Interactive map — Google Maps embed goes here"
-                className="aspect-[4/3] w-full"
+              <SiteImage
+                image={images.mapAustin}
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="aspect-[4/3] w-full shadow-soft"
               />
+              <p className="mt-2 text-center text-xs text-gray-400">
+                Interactive Google Map embed replaces this image in production.
+              </p>
             </FadeIn>
           </div>
 
