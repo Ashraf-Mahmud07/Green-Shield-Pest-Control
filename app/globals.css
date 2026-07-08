@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — deep green primary, lime secondary, orange accent */
+  --color-primary-50: #edf9f1;
+  --color-primary-100: #d4f0de;
+  --color-primary-200: #abe0c2;
+  --color-primary-300: #77c99e;
+  --color-primary-400: #45ab77;
+  --color-primary-500: #248f5b;
+  --color-primary-600: #167348;
+  --color-primary-700: #115c3b;
+  --color-primary-800: #0f4a31;
+  --color-primary-900: #0c3d29;
+  --color-primary-950: #062218;
+
+  --color-secondary-50: #f7fee7;
+  --color-secondary-100: #ecfcca;
+  --color-secondary-200: #d9f99b;
+  --color-secondary-300: #bef264;
+  --color-secondary-400: #a3e635;
+  --color-secondary-500: #84cc16;
+  --color-secondary-600: #65a30d;
+  --color-secondary-700: #4d7c0f;
+  --color-secondary-800: #3f6212;
+  --color-secondary-900: #365314;
+
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+  --color-accent-900: #7c2d12;
+
+  --color-charcoal: #1f2933;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 4px 24px -6px rgb(15 74 49 / 0.1);
+  --shadow-lift: 0 20px 45px -18px rgb(15 74 49 / 0.28);
+
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background: var(--color-secondary-300);
+  color: var(--color-primary-950);
+}
+
+/* Site-wide layout container */
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+
+  @media (width >= 640px) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Subtle glassmorphism surface */
+@utility glass {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.35);
+}
+
+@utility glass-dark {
+  background: rgb(6 34 24 / 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+/* Dotted texture used behind hero/CTA panels */
+@utility bg-dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility bg-dot-grid-dark {
+  background-image: radial-gradient(rgb(15 74 49 / 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
