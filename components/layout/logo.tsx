@@ -11,7 +11,7 @@ export function Logo({ light = false }: { light?: boolean }) {
       aria-label={`${site.name} — home`}
       className="flex items-center gap-2.5"
     >
-      <span className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 text-white shadow-soft">
+      <span className="flex size-10 items-center justify-center rounded-xl bg-linear-to-br from-primary-600 to-primary-800 text-white shadow-soft">
         <ShieldCheck className="size-6" aria-hidden />
       </span>
       <span className="leading-tight">

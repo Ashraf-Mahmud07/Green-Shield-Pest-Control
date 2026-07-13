@@ -12,7 +12,7 @@ export function ServiceCard({ service }: { service: Service }) {
     >
       {/* hover wash */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-secondary-50/0 transition-colors duration-300 group-hover:from-primary-50/60 group-hover:to-secondary-50/40"
+        className="absolute inset-0 bg-linear-to-br from-primary-50/0 to-secondary-50/0 transition-colors duration-300 group-hover:from-primary-50/60 group-hover:to-secondary-50/40"
         aria-hidden
       />
       <div className="relative">

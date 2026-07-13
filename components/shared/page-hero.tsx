@@ -20,7 +20,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
+    <section className="relative overflow-hidden bg-linear-to-br from-primary-900 via-primary-800 to-primary-950">
       <div className="bg-dot-grid absolute inset-0" aria-hidden />
       <div
         className="absolute -right-32 top-0 size-96 rounded-full bg-secondary-400/15 blur-3xl"

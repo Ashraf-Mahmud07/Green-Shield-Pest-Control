@@ -151,7 +151,7 @@ export default async function ServiceAreaPage({
 
             {/* Local review */}
             <FadeIn className="mt-8">
-              <figure className="rounded-3xl bg-gradient-to-br from-primary-50 to-secondary-50 p-7">
+              <figure className="rounded-3xl bg-linear-to-br from-primary-50 to-secondary-50 p-7">
                 <Quote className="size-7 text-primary-600" aria-hidden />
                 <blockquote className="mt-3 text-sm leading-relaxed text-gray-700">
                   &ldquo;{area.review.quote}&rdquo;

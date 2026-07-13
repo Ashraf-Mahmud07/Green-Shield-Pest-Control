@@ -104,7 +104,7 @@ export default function GetQuotePage() {
           </div>
 
           <FadeIn direction="left">
-            <div className="rounded-[2rem] border border-gray-100 bg-white p-7 shadow-lift sm:p-9 lg:sticky lg:top-28">
+            <div className="rounded-4xl border border-gray-100 bg-white p-7 shadow-lift sm:p-9 lg:sticky lg:top-28">
               <h2 className="font-heading text-2xl font-bold text-charcoal">Request My Quote</h2>
               <p className="mt-1 text-sm text-gray-500">
                 Or call{" "}

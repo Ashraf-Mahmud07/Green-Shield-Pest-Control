@@ -180,7 +180,7 @@ export default function AboutPage() {
       <section aria-label="Mission and vision" className="bg-gray-50 py-16 lg:py-24">
         <div className="container-site grid gap-8 lg:grid-cols-2">
           <FadeIn direction="right">
-            <div className="h-full rounded-[2rem] bg-gradient-to-br from-primary-800 to-primary-950 p-9 text-white sm:p-10">
+            <div className="h-full rounded-4xl bg-linear-to-br from-primary-800 to-primary-950 p-9 text-white sm:p-10">
               <Target className="size-9 text-secondary-400" aria-hidden />
               <h2 className="mt-4 font-heading text-2xl font-bold">Our Mission</h2>
               <p className="mt-3 leading-relaxed text-primary-100">
@@ -191,7 +191,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
           <FadeIn direction="left">
-            <div className="h-full rounded-[2rem] border border-gray-100 bg-white p-9 shadow-soft sm:p-10">
+            <div className="h-full rounded-4xl border border-gray-100 bg-white p-9 shadow-soft sm:p-10">
               <Eye className="size-9 text-primary-700" aria-hidden />
               <h2 className="mt-4 font-heading text-2xl font-bold text-charcoal">Our Vision</h2>
               <p className="mt-3 leading-relaxed text-gray-600">
@@ -289,7 +289,7 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <StaggerItem key={member.name}>
                 <div className="flex h-full flex-col rounded-3xl border border-gray-100 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-                  <span className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 font-heading text-xl font-bold text-white">
+                  <span className="flex size-16 items-center justify-center rounded-2xl bg-linear-to-br from-primary-600 to-primary-800 font-heading text-xl font-bold text-white">
                     {member.name
                       .split(" ")
                       .map((n) => n[0])
@@ -334,7 +334,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
           <FadeIn direction="left">
-            <div className="h-full rounded-3xl bg-gradient-to-br from-primary-50 to-secondary-50 p-8">
+            <div className="h-full rounded-3xl bg-linear-to-br from-primary-50 to-secondary-50 p-8">
               <HandHeart className="size-9 text-primary-700" aria-hidden />
               <h2 className="mt-4 font-heading text-xl font-bold text-charcoal">
                 Giving Back to {site.address.city}

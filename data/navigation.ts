@@ -1,6 +1,6 @@
-import type { NavLink } from "@/types";
-import { services, serviceCategories } from "@/data/services";
 import { serviceAreas } from "@/data/locations";
+import { serviceCategories, services } from "@/data/services";
+import type { NavLink } from "@/types";
 
 /** Mega-menu columns for the Services item, grouped by category. */
 export const serviceMenuColumns = (
@@ -24,29 +24,68 @@ export const mainNav: NavLink[] = [
     label: "Solutions",
     href: "#",
     children: [
-      { label: "Residential Pest Control", href: "/residential", description: "Family-safe home protection plans" },
-      { label: "Commercial Pest Control", href: "/commercial", description: "Audit-ready programs for business" },
-      { label: "Service Plans", href: "/plans", description: "Compare our protection plans" },
-      { label: "Emergency Service", href: "/emergency", description: "Same-day urgent pest response" },
+      {
+        label: "Residential Pest Control",
+        href: "/residential",
+        description: "Family-safe home protection plans",
+      },
+      {
+        label: "Commercial Pest Control",
+        href: "/commercial",
+        description: "Audit-ready programs for business",
+      },
+      {
+        label: "Emergency Service",
+        href: "/emergency",
+        description: "Same-day urgent pest response",
+      },
     ],
   },
   {
     label: "Company",
     href: "#",
     children: [
-      { label: "About Us", href: "/about", description: "Our story, team & values" },
-      { label: "Testimonials", href: "/testimonials", description: "What 48,000+ customers say" },
-      { label: "Gallery", href: "/gallery", description: "Our work, before & after" },
-      { label: "Careers", href: "/careers", description: "Join the GreenShield team" },
-      { label: "Service Areas", href: "/service-areas", description: "Cities we cover" },
+      {
+        label: "About Us",
+        href: "/about",
+        description: "Our story, team & values",
+      },
+      {
+        label: "Testimonials",
+        href: "/testimonials",
+        description: "What 48,000+ customers say",
+      },
+      {
+        label: "Gallery",
+        href: "/gallery",
+        description: "Our work, before & after",
+      },
+      {
+        label: "Careers",
+        href: "/careers",
+        description: "Join the GreenShield team",
+      },
+      {
+        label: "Service Areas",
+        href: "/service-areas",
+        description: "Cities we cover",
+      },
     ],
   },
   {
     label: "Resources",
     href: "#",
     children: [
-      { label: "Blog", href: "/blog", description: "Guides, tips & pest science" },
-      { label: "FAQs", href: "/faqs", description: "Answers to common questions" },
+      {
+        label: "Blog",
+        href: "/blog",
+        description: "Guides, tips & pest science",
+      },
+      {
+        label: "FAQs",
+        href: "/faqs",
+        description: "Answers to common questions",
+      },
     ],
   },
   { label: "Contact", href: "/contact" },
@@ -60,7 +99,6 @@ export const footerNav = {
     .concat([{ label: "All Services", href: "/services" }]),
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Service Plans", href: "/plans" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Gallery", href: "/gallery" },
     { label: "Careers", href: "/careers" },

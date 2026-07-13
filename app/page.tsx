@@ -1,5 +1,26 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { BlogCard } from "@/components/cards/blog-card";
+import { ServiceCard } from "@/components/cards/service-card";
+import { BeforeAfter } from "@/components/home/before-after";
+import { Hero } from "@/components/home/hero";
+import { CtaBanner } from "@/components/shared/cta-banner";
+import { FaqSection } from "@/components/shared/faq-section";
+import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
+import { RatingStars } from "@/components/shared/rating-stars";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { ServiceIcon } from "@/components/shared/service-icon";
+import { SiteImage } from "@/components/shared/site-image";
+import { StatsCounter } from "@/components/shared/stats-counter";
+import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
+import { Button } from "@/components/ui/button";
+import { blogPosts } from "@/data/blog-posts";
+import { generalFaqs } from "@/data/faqs";
+import { images } from "@/data/images";
+import { industries } from "@/data/industries";
+import { serviceAreas } from "@/data/locations";
+import { featuredServices, services } from "@/data/services";
+import { guarantees, site } from "@/data/site";
+import { testimonials } from "@/data/testimonials";
+import { buildMetadata } from "@/lib/seo";
 import {
   ArrowRight,
   Award,
@@ -16,31 +37,8 @@ import {
   Timer,
   UserCheck,
 } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
-import { site, guarantees } from "@/data/site";
-import { services, featuredServices } from "@/data/services";
-import { plans, allPlansInclude } from "@/data/plans";
-import { testimonials } from "@/data/testimonials";
-import { industries } from "@/data/industries";
-import { blogPosts } from "@/data/blog-posts";
-import { generalFaqs } from "@/data/faqs";
-import { serviceAreas } from "@/data/locations";
-import { Hero } from "@/components/home/hero";
-import { BeforeAfter } from "@/components/home/before-after";
-import { SectionHeading } from "@/components/shared/section-heading";
-import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
-import { StatsCounter } from "@/components/shared/stats-counter";
-import { TestimonialCarousel } from "@/components/shared/testimonial-carousel";
-import { CtaBanner } from "@/components/shared/cta-banner";
-import { FaqSection } from "@/components/shared/faq-section";
-import { SiteImage } from "@/components/shared/site-image";
-import { images } from "@/data/images";
-import { RatingStars } from "@/components/shared/rating-stars";
-import { ServiceCard } from "@/components/cards/service-card";
-import { PricingCard } from "@/components/cards/pricing-card";
-import { BlogCard } from "@/components/cards/blog-card";
-import { ServiceIcon } from "@/components/shared/service-icon";
-import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = buildMetadata({
   title: `Pest Control in Austin, TX — Same-Day Service | ${site.name}`,
@@ -166,7 +164,7 @@ export default function HomePage() {
             <FadeIn direction="right">
               <Link
                 href="/residential"
-                className="group relative block h-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary-800 to-primary-950 p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-10"
+                className="group relative block h-full overflow-hidden rounded-4xl bg-linear-to-br from-primary-800 to-primary-950 p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-10"
               >
                 <div className="bg-dot-grid absolute inset-0" aria-hidden />
                 <div className="relative">
@@ -202,7 +200,7 @@ export default function HomePage() {
             <FadeIn direction="left">
               <Link
                 href="/commercial"
-                className="group relative block h-full overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-10"
+                className="group relative block h-full overflow-hidden rounded-4xl border border-gray-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-10"
               >
                 <div className="bg-dot-grid-dark absolute inset-0" aria-hidden />
                 <div className="relative">
@@ -301,7 +299,7 @@ export default function HomePage() {
               <SiteImage
                 image={images.handshake}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="aspect-[4/5] w-full shadow-soft"
+                className="aspect-4/5 w-full shadow-soft"
               />
               <div className="glass absolute -bottom-6 right-4 max-w-56 rounded-2xl p-5 shadow-lift">
                 <Award className="size-8 text-accent-500" aria-hidden />
@@ -348,43 +346,12 @@ export default function HomePage() {
       {/* Stats band */}
       <section
         aria-label="Company statistics"
-        className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950 py-16 lg:py-20"
+        className="relative overflow-hidden bg-linear-to-br from-primary-900 via-primary-800 to-primary-950 py-16 lg:py-20"
       >
         <div className="bg-dot-grid absolute inset-0" aria-hidden />
         <div className="container-site relative">
           <StatsCounter />
         </div>
-      </section>
-
-      {/* Service plans */}
-      <section aria-label="Service plans" className="container-site py-16 lg:py-24">
-        <SectionHeading
-          eyebrow="Protection Plans"
-          title="Choose Your Level of Protection"
-          subtitle="Every plan includes our pest-free guarantee and unlimited free re-services. Upgrade, downgrade, or cancel anytime with 30 days' notice."
-        />
-        <Stagger className="grid gap-8 pt-4 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <StaggerItem key={plan.id}>
-              <PricingCard plan={plan} />
-            </StaggerItem>
-          ))}
-        </Stagger>
-        <FadeIn className="mx-auto mt-10 max-w-3xl">
-          <div className="rounded-2xl bg-gray-50 p-6">
-            <p className="text-center font-heading text-sm font-semibold text-charcoal">
-              Every plan includes:
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
-              {allPlansInclude.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <BadgeCheck className="mt-0.5 size-4 shrink-0 text-secondary-600" aria-hidden />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </FadeIn>
       </section>
 
       {/* Before & after */}
@@ -466,7 +433,7 @@ export default function HomePage() {
         <Stagger className="grid gap-6 lg:grid-cols-3">
           {guarantees.map((g) => (
             <StaggerItem key={g.title}>
-              <div className="h-full rounded-3xl bg-gradient-to-br from-primary-50 to-secondary-50 p-8 transition-transform duration-300 hover:-translate-y-1">
+              <div className="h-full rounded-3xl bg-linear-to-br from-primary-50 to-secondary-50 p-8 transition-transform duration-300 hover:-translate-y-1">
                 <ShieldCheck className="size-9 text-primary-700" aria-hidden />
                 <h3 className="mt-4 font-heading text-lg font-bold text-charcoal">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">{g.description}</p>

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { BadgeCheck, CalendarCheck, ClipboardList, Microscope } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
-import { site } from "@/data/site";
-import { PageHero } from "@/components/shared/page-hero";
-import { FadeIn } from "@/components/shared/motion";
 import { InspectionForm } from "@/components/forms/inspection-form";
+import { FadeIn } from "@/components/shared/motion";
+import { PageHero } from "@/components/shared/page-hero";
 import { RatingStars } from "@/components/shared/rating-stars";
+import { site } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
+import { BadgeCheck, CalendarCheck, ClipboardList, Microscope } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
   title: "Request a Free Inspection — Same-Day Availability",
@@ -75,7 +75,7 @@ export default function RequestInspectionPage() {
             </div>
 
             <FadeIn delay={0.25}>
-              <div className="mt-10 rounded-3xl bg-gradient-to-br from-primary-50 to-secondary-50 p-7">
+              <div className="mt-10 rounded-3xl bg-linear-to-br from-primary-50 to-secondary-50 p-7">
                 <div className="flex items-center gap-3">
                   <RatingStars rating={site.rating.value} />
                   <span className="text-sm font-medium text-gray-700">
@@ -96,7 +96,7 @@ export default function RequestInspectionPage() {
 
           {/* Form */}
           <FadeIn direction="left">
-            <div className="rounded-[2rem] border border-gray-100 bg-white p-7 shadow-lift sm:p-9 lg:sticky lg:top-28">
+            <div className="rounded-4xl border border-gray-100 bg-white p-7 shadow-lift sm:p-9 lg:sticky lg:top-28">
               <h2 className="font-heading text-2xl font-bold text-charcoal">
                 Schedule My Inspection
               </h2>

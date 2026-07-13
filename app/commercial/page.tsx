@@ -203,7 +203,7 @@ export default function CommercialPage() {
             </Stagger>
           </div>
           <FadeIn direction="left">
-            <div className="rounded-[2rem] bg-gradient-to-br from-primary-50 to-secondary-50 p-8 sm:p-10">
+            <div className="rounded-4xl bg-linear-to-br from-primary-50 to-secondary-50 p-8 sm:p-10">
               <BarChart3 className="size-10 text-primary-700" aria-hidden />
               <h3 className="mt-5 font-heading text-2xl font-bold text-charcoal">
                 Free Facility Assessment

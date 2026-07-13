@@ -43,7 +43,7 @@ export default function FaqsPage() {
       {/* Still have questions */}
       <section aria-label="Contact for more questions" className="container-site py-16 lg:py-20">
         <FadeIn>
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-[2.5rem] bg-gradient-to-br from-primary-50 to-secondary-50 p-10 text-center">
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-[2.5rem] bg-linear-to-br from-primary-50 to-secondary-50 p-10 text-center">
             <span className="flex size-16 items-center justify-center rounded-full bg-white text-primary-700 shadow-soft">
               <MessageCircleQuestion className="size-8" aria-hidden />
             </span>

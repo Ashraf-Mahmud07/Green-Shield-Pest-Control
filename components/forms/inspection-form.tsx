@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { FormSuccess } from "@/components/forms/form-success";
+import { Button } from "@/components/ui/button";
+import { FieldError, Input, Label, Textarea } from "@/components/ui/input";
+import { inspectionSchema, type InspectionValues } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarCheck, Loader2 } from "lucide-react";
-import { inspectionSchema, type InspectionValues } from "@/lib/validations";
-import { Input, Label, Select, Textarea, FieldError } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { FormSuccess } from "@/components/forms/form-success";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 /** Free inspection scheduling form. */
 export function InspectionForm() {
@@ -72,42 +72,6 @@ export function InspectionForm() {
           {...register("email")}
         />
         <FieldError message={errors.email?.message} />
-      </div>
-
-      <div>
-        <Label htmlFor="insp-address">Property Address</Label>
-        <Input
-          id="insp-address"
-          placeholder="123 Oak Street, Austin, TX 78704"
-          autoComplete="street-address"
-          aria-invalid={!!errors.address}
-          {...register("address")}
-        />
-        <FieldError message={errors.address?.message} />
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <Label htmlFor="insp-date">Preferred Date</Label>
-          <Input
-            id="insp-date"
-            type="date"
-            aria-invalid={!!errors.preferredDate}
-            {...register("preferredDate")}
-          />
-          <FieldError message={errors.preferredDate?.message} />
-        </div>
-        <div>
-          <Label htmlFor="insp-window">Time Window</Label>
-          <Select id="insp-window" aria-invalid={!!errors.timeWindow} {...register("timeWindow")}>
-            <option value="">Select…</option>
-            <option value="morning">Morning (8 AM – 12 PM)</option>
-            <option value="afternoon">Afternoon (12 – 4 PM)</option>
-            <option value="evening">Evening (4 – 7 PM)</option>
-            <option value="asap">As soon as possible</option>
-          </Select>
-          <FieldError message={errors.timeWindow?.message} />
-        </div>
       </div>
 
       <div>

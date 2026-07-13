@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
+    <section className="relative overflow-hidden bg-linear-to-br from-primary-900 via-primary-800 to-primary-950">
       <div className="bg-dot-grid absolute inset-0" aria-hidden />
       <div className="container-site relative flex min-h-[70vh] flex-col items-center justify-center py-24 text-center">
         <span className="flex size-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-sm">
@@ -39,7 +39,6 @@ export default function NotFound() {
           {[
             { label: "Free Inspection", href: "/request-inspection" },
             { label: "Get a Quote", href: "/get-quote" },
-            { label: "Service Plans", href: "/plans" },
             { label: "Blog", href: "/blog" },
             { label: "Contact", href: "/contact" },
           ].map((link) => (

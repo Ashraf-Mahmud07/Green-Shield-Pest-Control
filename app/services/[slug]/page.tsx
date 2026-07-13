@@ -249,7 +249,7 @@ export default async function ServicePage({
             </FadeIn>
           </div>
           <FadeIn direction="left">
-            <div className="rounded-[2rem] border border-gray-100 bg-white p-7 shadow-lift sm:p-8 lg:sticky lg:top-28">
+            <div className="rounded-4xl border border-gray-100 bg-white p-7 shadow-lift sm:p-8 lg:sticky lg:top-28">
               <h3 className="font-heading text-xl font-bold text-charcoal">
                 Get Your Free {service.shortName} Quote
               </h3>

@@ -16,7 +16,7 @@ export function CtaBanner({
   return (
     <section aria-labelledby="cta-banner-heading" className="container-site py-16 lg:py-24">
       <FadeIn>
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950 px-6 py-14 text-center shadow-lift sm:px-12 lg:px-20 lg:py-20">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-linear-to-br from-primary-800 via-primary-900 to-primary-950 px-6 py-14 text-center shadow-lift sm:px-12 lg:px-20 lg:py-20">
           <div className="bg-dot-grid absolute inset-0" aria-hidden />
           {/* decorative glows */}
           <div

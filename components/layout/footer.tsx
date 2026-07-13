@@ -46,7 +46,7 @@ export function Footer() {
         {/* Brand column */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white">
+            <span className="flex size-10 items-center justify-center rounded-xl bg-linear-to-br from-primary-500 to-primary-700 text-white">
               <ShieldCheck className="size-6" aria-hidden />
             </span>
             <span className="leading-tight">
@@ -109,21 +109,6 @@ export function Footer() {
           </h3>
           <ul className="mt-4 space-y-2.5">
             {footerNav.company.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm text-primary-200 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h3 className="mt-8 font-heading text-sm font-bold uppercase tracking-wider text-secondary-400">
-            Service Areas
-          </h3>
-          <ul className="mt-4 space-y-2.5">
-            {footerNav.areas.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

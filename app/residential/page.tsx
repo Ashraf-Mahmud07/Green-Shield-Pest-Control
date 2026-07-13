@@ -1,4 +1,15 @@
-import type { Metadata } from "next";
+import { ReviewCard } from "@/components/cards/review-card";
+import { CtaBanner } from "@/components/shared/cta-banner";
+import { FaqSection } from "@/components/shared/faq-section";
+import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
+import { PageHero } from "@/components/shared/page-hero";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { SiteImage } from "@/components/shared/site-image";
+import { Button } from "@/components/ui/button";
+import { generalFaqs } from "@/data/faqs";
+import { images } from "@/data/images";
+import { testimonials } from "@/data/testimonials";
+import { buildMetadata } from "@/lib/seo";
 import {
   Baby,
   BadgeCheck,
@@ -13,20 +24,7 @@ import {
   Sun,
   Wind,
 } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
-import { plans } from "@/data/plans";
-import { generalFaqs } from "@/data/faqs";
-import { testimonials } from "@/data/testimonials";
-import { PageHero } from "@/components/shared/page-hero";
-import { SectionHeading } from "@/components/shared/section-heading";
-import { FadeIn, Stagger, StaggerItem } from "@/components/shared/motion";
-import { SiteImage } from "@/components/shared/site-image";
-import { images } from "@/data/images";
-import { PricingCard } from "@/components/cards/pricing-card";
-import { ReviewCard } from "@/components/cards/review-card";
-import { CtaBanner } from "@/components/shared/cta-banner";
-import { FaqSection } from "@/components/shared/faq-section";
-import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
   title: "Residential Pest Control — Family-Safe Home Protection",
@@ -115,9 +113,6 @@ export default function ResidentialPage() {
             className="w-full sm:w-auto"
           >
             Schedule a Home Inspection
-          </Button>
-          <Button href="/plans" variant="outline-light" size="lg" className="w-full sm:w-auto">
-            Compare Protection Plans
           </Button>
         </FadeIn>
       </PageHero>
@@ -231,24 +226,6 @@ export default function ResidentialPage() {
               </Button>
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* Plans */}
-      <section aria-label="Home protection plans" className="bg-gray-50 py-16 lg:py-24">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="Maintenance Plans"
-            title="Home Protection Plans That Fit Real Budgets"
-            subtitle="Recurring protection costs less per visit than corrective treatments — and comes with unlimited free re-services."
-          />
-          <Stagger className="grid gap-8 pt-4 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <StaggerItem key={plan.id}>
-                <PricingCard plan={plan} />
-              </StaggerItem>
-            ))}
-          </Stagger>
         </div>
       </section>
 

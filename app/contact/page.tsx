@@ -157,7 +157,7 @@ export default function ContactPage() {
 
           {/* Form */}
           <FadeIn direction="left">
-            <div className="rounded-[2rem] border border-gray-100 bg-white p-7 shadow-lift sm:p-9">
+            <div className="rounded-4xl border border-gray-100 bg-white p-7 shadow-lift sm:p-9">
               <h2 className="font-heading text-2xl font-bold text-charcoal">Send a Message</h2>
               <p className="mt-1 text-sm text-gray-500">
                 We reply to every message within one business day — usually much faster.

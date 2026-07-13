@@ -168,7 +168,7 @@ export default async function BlogPostPage({
                 Book a Free Inspection
               </Button>
             </div>
-            <div className="rounded-3xl bg-gradient-to-br from-primary-50 to-secondary-50 p-7">
+            <div className="rounded-3xl bg-linear-to-br from-primary-50 to-secondary-50 p-7">
               <h2 className="font-heading text-base font-bold text-charcoal">
                 Seasonal pest alerts
               </h2>

@@ -30,7 +30,7 @@ export default function BlogPage() {
       {/* Newsletter */}
       <section aria-label="Newsletter signup" className="container-site pb-16 lg:pb-20">
         <FadeIn>
-          <div className="rounded-[2.5rem] bg-gradient-to-br from-primary-50 to-secondary-50 px-6 py-12 text-center sm:px-12">
+          <div className="rounded-[2.5rem] bg-linear-to-br from-primary-50 to-secondary-50 px-6 py-12 text-center sm:px-12">
             <h2 className="font-heading text-2xl font-bold text-charcoal sm:text-3xl">
               Get Seasonal Pest Alerts
             </h2>
