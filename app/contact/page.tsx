@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone, Siren } from "lucide-react";
+import { ContactForm } from "@/components/forms/contact-form";
+import { FaqSection } from "@/components/shared/faq-section";
+import { FadeIn } from "@/components/shared/motion";
+import { PageHero } from "@/components/shared/page-hero";
+import { SiteImage } from "@/components/shared/site-image";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -7,13 +10,13 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "@/components/shared/social-icons";
-import { buildMetadata } from "@/lib/seo";
-import { site } from "@/data/site";
-import { PageHero } from "@/components/shared/page-hero";
-import { FadeIn } from "@/components/shared/motion";
-import { ContactForm } from "@/components/forms/contact-form";
-import { SiteImage } from "@/components/shared/site-image";
+import { generalFaqs } from "@/data/faqs";
 import { images } from "@/data/images";
+import { site } from "@/data/site";
+import { buildMetadata } from "@/lib/seo";
+import { Clock, Mail, MapPin, Phone, Siren } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us — Talk to a Real Human",
@@ -147,7 +150,7 @@ export default function ContactPage() {
               <SiteImage
                 image={images.mapAustin}
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="aspect-[4/3] w-full shadow-soft"
+                className="aspect-4/3 w-full shadow-soft"
               />
               <p className="mt-2 text-center text-xs text-gray-400">
                 Interactive Google Map embed replaces this image in production.
@@ -167,6 +170,20 @@ export default function ContactPage() {
               </div>
             </div>
           </FadeIn>
+        </div>
+        <div className="bg-gray-50">
+          <FaqSection
+            faqs={generalFaqs.slice(0, 6)}
+            subtitle="Quick answers to what customers ask most. Need more? Visit our full FAQ page or just call — a human always answers."
+          />
+          <div className="container-site -mt-6 pb-6 text-center">
+            <Link
+              href="/faqs"
+              className="font-heading text-sm font-semibold text-primary-700 hover:underline"
+            >
+              See all frequently asked questions →
+            </Link>
+          </div>
         </div>
       </section>
     </>

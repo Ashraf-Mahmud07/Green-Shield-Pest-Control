@@ -1,4 +1,3 @@
-import { serviceAreas } from "@/data/locations";
 import { serviceCategories, services } from "@/data/services";
 import type { NavLink } from "@/types";
 
@@ -60,33 +59,11 @@ export const mainNav: NavLink[] = [
         href: "/gallery",
         description: "Our work, before & after",
       },
-      {
-        label: "Careers",
-        href: "/careers",
-        description: "Join the GreenShield team",
-      },
-      {
-        label: "Service Areas",
-        href: "/service-areas",
-        description: "Cities we cover",
-      },
     ],
   },
   {
-    label: "Resources",
-    href: "#",
-    children: [
-      {
-        label: "Blog",
-        href: "/blog",
-        description: "Guides, tips & pest science",
-      },
-      {
-        label: "FAQs",
-        href: "/faqs",
-        description: "Answers to common questions",
-      },
-    ],
+    label: "Blog",
+    href: "/blog",
   },
   { label: "Contact", href: "/contact" },
 ];
@@ -101,14 +78,9 @@ export const footerNav = {
     { label: "About Us", href: "/about" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Careers", href: "/careers" },
     { label: "Blog", href: "/blog" },
     { label: "FAQs", href: "/faqs" },
   ],
-  areas: serviceAreas.map((a) => ({
-    label: `${a.city}, ${a.state}`,
-    href: `/service-areas/${a.slug}`,
-  })),
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms" },

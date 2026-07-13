@@ -16,7 +16,6 @@ import { blogPosts } from "@/data/blog-posts";
 import { generalFaqs } from "@/data/faqs";
 import { images } from "@/data/images";
 import { industries } from "@/data/industries";
-import { serviceAreas } from "@/data/locations";
 import { featuredServices, services } from "@/data/services";
 import { guarantees, site } from "@/data/site";
 import { testimonials } from "@/data/testimonials";
@@ -444,36 +443,6 @@ export default function HomePage() {
         <FadeIn className="mt-8 text-center text-sm text-gray-500">
           {site.license} · Fully insured · Certified applicators on every route
         </FadeIn>
-      </section>
-
-      {/* Service areas */}
-      <section aria-label="Service areas" className="bg-gray-50 py-16 lg:py-24">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="Where We Work"
-            title="Proudly Serving the Austin Metro"
-            subtitle="Local routes run daily through every community we serve — that's how same-day service stays possible."
-          />
-          <Stagger className="flex flex-wrap justify-center gap-3">
-            {serviceAreas.map((area) => (
-              <StaggerItem key={area.slug}>
-                <Link
-                  href={`/service-areas/${area.slug}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-2.5 font-heading text-sm font-semibold text-charcoal shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:text-primary-800 hover:shadow-lift"
-                >
-                  <MapPin className="size-4 text-primary-600" aria-hidden />
-                  {area.city}, {area.state}
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
-          <FadeIn className="mt-8 text-center text-sm text-gray-500">
-            Don&apos;t see your city?{" "}
-            <Link href="/service-areas" className="font-semibold text-primary-700 hover:underline">
-              View our full coverage map →
-            </Link>
-          </FadeIn>
-        </div>
       </section>
 
       {/* Latest blogs */}
